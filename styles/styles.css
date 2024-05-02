@@ -14,10 +14,14 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: black;
+
+  /* background colors */
+  --bg-color-white: #fff;
+  --bg-color-beige: #f0ebe2;
+  --bg-color-red: #a64241;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -38,7 +42,8 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 140px;
+  --mobile-nav-height: 97px;
 }
 
 @font-face {
@@ -65,7 +70,7 @@ body {
   font-family: var(--body-font-family);
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--bg-color-beige);
   display: none;
 }
 
@@ -143,7 +148,7 @@ a.button:any-link, button {
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: var(--background-color);
+  color: var(--bg-color-white);
   background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
@@ -200,6 +205,12 @@ main .section {
   .section > div {
     max-width: 1200px;
     margin: auto;
+  }
+}
+
+@media (width <= 900px) {
+  header {
+    height: var(--mobile-nav-height);
   }
 }
 
