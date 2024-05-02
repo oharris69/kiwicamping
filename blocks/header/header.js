@@ -102,9 +102,10 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['brand', 'tools', 'sections']; /* switch order */
   classes.forEach((c, i) => {
     const section = nav.children[i];
+    console.log("section: ", section)
     if (section) section.classList.add(`nav-${c}`);
   });
 
@@ -129,14 +130,44 @@ export default async function decorate(block) {
     });
   }
 
-  // hamburger for mobile
-  const hamburger = document.createElement('div');
-  hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
-    </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const p = navTools.querySelector('p:nth-of-type(2)');
+    const inputElement = document.createElement('input');
+    inputElement.setAttribute('type', 'text');
+    inputElement.setAttribute('placeholder', 'What are you looking for?');
+
+    const parentElement = p.querySelector('.icon-search').parentElement;
+    parentElement.insertBefore(inputElement, p.querySelector('.icon-search'));
+
+
+    const wrapper = navTools.querySelector('.default-content-wrapper');
+    // hamburger for mobile
+    const hamburger = document.createElement('div');
+    hamburger.classList.add('nav-hamburger');
+    hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
+        <span class="nav-hamburger-icon"></span>
+      </button>`;
+    hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
+    wrapper.prepend(hamburger);
+
+    // dfasdf
+    const links = navTools.querySelectorAll('ul li');
+    
+    links.forEach((link, i) => {
+      if (i === 0) {
+        const div = document.createElement('div');
+        div.className = 'tool-link-register';
+        div.innerHTML = `<div>Welcome <span>&#8964;</span></div>
+          <div class='links'>
+            <span>Sign In</span> or <span>Register</span>
+          </div>
+          <div class='mobile-label'>Account</div>`;
+        link.appendChild(div);
+      }
+    });
+  }
+
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
