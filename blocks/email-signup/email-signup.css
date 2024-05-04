@@ -1,0 +1,71 @@
+.section.email-signup-container {
+  border-top: 1px solid #ccc;
+  padding: 32px;
+}
+
+.email-signup {
+  width: 41%;
+}
+
+.email-signup .label p {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.email-signup .information br {
+  margin: 5px 0;
+}
+
+.email-signup .information p {
+  font-size: 10.8px;
+  font-weight: 400;
+}
+
+.email-signup .input-fields .text-input {
+  display: flex;
+  flex-direction: row;
+}
+
+.email-signup .input-fields .text-input label {
+  display: none;
+}
+
+.email-signup .input-fields .text-input input[type="text"] {
+  padding: 16px 8px;
+  border-radius: 0;
+  border: 1px solid #000;
+  height: 55px;
+  width: 77%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.email-signup .input-fields .text-input button {
+  margin: 0;
+  border-radius: 0 4px 4px 0;
+  background-color: #484745;
+  color: #ffffff;
+  font-size: 12px;
+  border: 1px solid #484745;
+}
+
+.email-signup .input-fields .checkbox-input label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.email-signup .input-fields .text-input button:hover {
+  background-color: var(--bg-color-red);
+}
+
+@media (width <= 1200px) {
+  .email-signup {
+    width: 60%;
+  }
+}
+
+@media (width <= 768px) {
+  .email-signup {
+    width: 100%;
+  }
+}

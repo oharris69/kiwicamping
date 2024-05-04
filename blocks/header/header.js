@@ -105,7 +105,6 @@ export default async function decorate(block) {
   const classes = ['brand', 'tools', 'sections']; /* switch order */
   classes.forEach((c, i) => {
     const section = nav.children[i];
-    console.log("section: ", section)
     if (section) section.classList.add(`nav-${c}`);
   });
 

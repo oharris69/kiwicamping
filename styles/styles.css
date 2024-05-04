@@ -203,7 +203,7 @@ main .section {
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
   }
 }
@@ -212,6 +212,22 @@ main .section {
   header {
     height: var(--mobile-nav-height);
   }
+}
+
+/* section */ 
+.section.full-width {
+  padding: 0;
+}
+
+.section.full-width > div {
+  max-width: 100%;
+}
+
+.section .default-content-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  font-size: 30px;
 }
 
 /* section metadata */
