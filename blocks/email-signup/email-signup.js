@@ -27,9 +27,11 @@ export default async function decorate(block) {
 
   const checkboxInput = document.createElement('input');
   checkboxInput.setAttribute('type', 'checkbox');
-
+  checkboxInput.setAttribute('id', 'myCheckbox');
+  
   const checkboxLabel = document.createElement('label');
   checkboxLabel.textContent = checkboxInputLabel;
+  checkboxLabel.setAttribute('for', 'myCheckbox');
 
   // Append the elements to the existing HTML structure
   textInputDiv.appendChild(emailLabel);
