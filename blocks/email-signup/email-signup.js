@@ -1,4 +1,3 @@
-
 export default async function decorate(block) {
   const childDivs = block.children;
   childDivs[0].classList.add('label');
