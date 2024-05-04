@@ -5,8 +5,8 @@ export default async function decorate(block) {
   childDivs[2].classList.add('information');
 
   const inputDiv = childDivs[1];
-  const p = inputDiv.querySelector('p');
-  const checkboxInputLabel = p.textContent;
+  const div = inputDiv.querySelector('div');
+  const checkboxInputLabel = div?.textContent;
 
   // Create the new elements
   const textInputDiv = document.createElement('div');
