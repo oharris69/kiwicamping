@@ -20,14 +20,6 @@
 }
 
 /* Full Width Columns */
-.section.full-width.columns-container {
-  padding: 0;
-}
-
-.section.full-width.columns-container > .columns-wrapper {
-  max-width: 100%;
-}
-
 .columns.full-width > div {
   gap: unset;
 }
