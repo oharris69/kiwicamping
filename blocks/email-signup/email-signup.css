@@ -52,6 +52,7 @@
 .email-signup .input-fields .checkbox-input label {
   font-size: 14px;
   font-weight: 700;
+  margin-left: 10px;
 }
 
 .email-signup .input-fields .text-input button:hover {
